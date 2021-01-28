@@ -1,5 +1,5 @@
 import React from "react";
-import { PizzaTreatment } from "types";
+import { PizzaTreatment } from "../../types";
 
 const PizzaList = ({
   pizzas,
