@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AppContext, State } from "./AppContext";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Home/Home";
+import Pizza from "./Pizza/Pizza";
 
-const App: React.FC = () => {
+const App = () => {
   const [state, setState] = useState<State>({
     text: "cc bob"
   });
@@ -20,7 +21,7 @@ const App: React.FC = () => {
             <Home />
           </Route>
           <Route path="/pizza">
-            <Home />
+            <Pizza />
           </Route>
         </Switch>
       </BrowserRouter>

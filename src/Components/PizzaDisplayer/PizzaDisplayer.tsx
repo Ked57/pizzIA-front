@@ -1,8 +1,11 @@
-import { AppContext } from "../../AppContext";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 
-const PizzaDisplayer: React.FC = () => {
-  return <><img src={} ></img></>;
+const PizzaDisplayer = (props: { imgUrl?: string }) => {
+  return (
+    <>
+      <img src={props.imgUrl}></img>
+    </>
+  );
 };
 
 export default PizzaDisplayer;
