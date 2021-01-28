@@ -10,21 +10,23 @@ const App = () => {
   const [state, setState] = useState<State>({});
   return (
     <AppContext.Provider value={{ state, setState }}>
-      <Navbar />
-      <div className="h-full bg-gray-600 text-white">
-        <Router history={createBrowserHistory()}>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/stats">
-              <Home />
-            </Route>
-            <Route path="/pizza">
-              <Pizza />
-            </Route>
-          </Switch>
-        </Router>
+      <div className="text-5xl">
+        <Navbar />
+        <div className="h-full bg-gray-600 text-white p-4">
+          <Router history={createBrowserHistory()}>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/stats">
+                <Home />
+              </Route>
+              <Route path="/pizza">
+                <Pizza />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </div>
     </AppContext.Provider>
   );

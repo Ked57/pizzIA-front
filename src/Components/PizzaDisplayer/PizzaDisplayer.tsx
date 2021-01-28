@@ -1,9 +1,9 @@
 import React from "react";
 
-const PizzaDisplayer = (props: { imgUrl?: string }) => {
+const PizzaDisplayer = ({imgUrl}: { imgUrl?: string }) => {
   return (
     <>
-      <img src={props.imgUrl}></img>
+      <img src={imgUrl}></img>
     </>
   );
 };

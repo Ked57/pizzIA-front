@@ -1,9 +1,9 @@
 import React from "react";
 
-const RecipeHelper = (props: { message?: string }) => {
+const RecipeHelper = ({message}: { message?: string }) => {
   return (
     <>
-      <div>Remarque: {props.message}</div>
+      <div>Remarque: {message}</div>
     </>
   );
 };
