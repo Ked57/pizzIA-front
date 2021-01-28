@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PizzaDisplayer from "Components/PizzaDisplayer/PizzaDisplayer";
+import PizzaDisplayer from "../Components/PizzaDisplayer/PizzaDisplayer";
 
 type PizzaTreatment = {
   imageUrl?: string;
