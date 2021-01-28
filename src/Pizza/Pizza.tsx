@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PizzaDisplayer from "../Components/PizzaDisplayer/PizzaDisplayer";
+import RecipeHelper from "../Components/RecipeHelper/RecipeHelper";
 
 type PizzaTreatment = {
   imageUrl?: string;
@@ -23,16 +24,23 @@ const Pizza = () => {
   useEffect(() => {
     setInterval(callApi, 5000);
   }, []);
-  if (!pizzaTreatment) {
-    return <>CHARGEMENT</>;
-  }
-  if (pizzaTreatment.error) {
-    return <>Error: {pizzaTreatment.error}</>
-  }
   return (
-    <>
-      <PizzaDisplayer imgUrl={pizzaTreatment.imageUrl} />
-    </>
+    <div className="flex flex-auto justify-center">
+      {pizzaTreatment ? (
+        <>
+          <RecipeHelper
+            message={pizzaTreatment.error || pizzaTreatment.message}
+          />
+          {pizzaTreatment.imageUrl ? (
+            <PizzaDisplayer imgUrl={pizzaTreatment.imageUrl} />
+          ) : (
+            <></>
+          )}
+        </>
+      ) : (
+        <>Chargement...</>
+      )}
+    </div>
   );
 };
 

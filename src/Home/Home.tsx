@@ -1,8 +1,6 @@
-import { AppContext } from "../AppContext";
-import React, { useContext } from "react";
+import React from "react";
 
 const App: React.FC = () => {
-  const {state, setState} = useContext(AppContext)
   return <>Home</>;
 };
 
