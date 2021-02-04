@@ -13,19 +13,21 @@ const Pizza = () => {
       setPizzaTreatment({ error: "Pas de réponse de l'API" });
       throw response;
     }
-    const { imageUrl, message } = await response.json();
-    setPizzaTreatment({ imageUrl, message });
+    const { id, imageUrl, message } = await response.json();
+    setPizzaTreatment({ id, imageUrl, message });
+  };
+  const fetchPizza = (interval?: any) => {
+    callApi().catch((err) => {
+      console.error(err);
+      clearInterval(interval);
+    });
   };
   useEffect(() => {
-    const interval = setInterval(() => {
-      callApi().catch((err) => {
-        console.error(err);
-        clearInterval(interval);
-      });
-    }, 5000);
+    fetchPizza()
+    const interval = setInterval(() => fetchPizza(interval), 5000);
   }, []);
   return (
-    <div className="flex flex-auto justify-center">
+    <div className="flex flex-auto flex-col justify-center">
       {pizzaTreatment ? (
         <>
           <RecipeHelper

@@ -21,7 +21,7 @@ const PizzaList = ({
         </thead>
         <tbody>
           {pizzas.map((pizza) => (
-            <tr key={pizza.message} className="bg-gray-400 border-4 border-gray-400">
+            <tr key={pizza.id} className="bg-gray-400 border-4 border-gray-400">
               <td>
                 <span className="text-center ml-2">{pizza.message}</span>
               </td>
