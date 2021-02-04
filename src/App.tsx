@@ -5,6 +5,7 @@ import { AppContext, State } from "./AppContext";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Home/Home";
 import Pizza from "./Pizza/Pizza";
+import Stats from "./Stats/Stats";
 
 const App = () => {
   const [state, setState] = useState<State>({});
@@ -19,7 +20,7 @@ const App = () => {
                 <Home />
               </Route>
               <Route path="/stats">
-                <Home />
+                <Stats />
               </Route>
               <Route path="/pizza">
                 <Pizza />
