@@ -8,9 +8,9 @@ const PizzaList = ({
 }) => {
   return (
     <div className="flex flex-auto justify-center">
-      <table className="table-auto text-xl">
+      <table className="table-auto text-xl m-8">
         <thead className="justify-between">
-          <tr className="bg-gray-800 border-4 border-gray-800">
+          <tr className="bg-gray-900 border-4 border-gray-900">
             <th className="px-16 py-2">
               <span className="text-white">Message</span>
             </th>
