@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { AppContext, State } from "./AppContext";
 import Navbar from "./Components/Navbar/Navbar";
@@ -11,10 +11,10 @@ const App = () => {
   const [state, setState] = useState<State>({});
   return (
     <AppContext.Provider value={{ state, setState }}>
-      <div className="text-5xl min-h-screen bg-gray-600 text-white ">
-        <Navbar />
-        <div className="p-4">
-          <Router history={createBrowserHistory()}>
+      <BrowserRouter>
+        <div className="text-5xl min-h-screen bg-gray-600 text-white ">
+          <Navbar />
+          <div className="p-4">
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -26,9 +26,9 @@ const App = () => {
                 <Pizza />
               </Route>
             </Switch>
-          </Router>
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     </AppContext.Provider>
   );
 };
